@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Professional Profile</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load Font Awesome for icons (Fab and others) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJzL3m+TDP3r+M558t2V/K2l3QeW4xK93B2X0G1Yt4lR40T85P0t4q5Wz2Sg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Configure Tailwind for the "Inter" font and enable 'class' dark mode -->
-    <script>
+    <!-- Favicon: Sets pfp.png as the site icon -->
+    <link rel="icon" type="image/png" href="./pfp.png">
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for icons (Fab and others) --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJzL3m+TDP3r+M558t2V/K2l3QeW4xK93B2X0G1Yt4lR40T85P0t4q5Wz2Sg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Configure Tailwind for the "Inter" font and enable 'class' dark mode --><script>
         tailwind.config = {
             // Enable dark mode based on the presence of the 'dark' class on the HTML tag
             darkMode: 'class', 
@@ -31,115 +30,95 @@
 </head>
 <body class="font-sans bg-slate-50 text-slate-800 dark:bg-gray-900 dark:text-slate-50 min-h-screen transition-colors duration-500">
 
-    <!-- Main Container: Now a simple full-width, full-height wrapper -->
-    <!-- Removed centering classes and responsive padding -->
-    <div class="w-full min-h-screen">
+    <!-- Main Container: Now a simple full-width, full-height wrapper --><div class="w-full min-h-screen">
         
-        <!-- Profile Card Container: Now acts as the full-screen application surface -->
-        <div class="w-full min-h-screen bg-white dark:bg-slate-800 overflow-hidden transition-colors duration-500">
+        <!-- Profile Card Container: Now acts as the full-screen application surface --><div class="w-full min-h-screen bg-white dark:bg-slate-800 overflow-hidden transition-colors duration-500 flex flex-col">
 
-            <!-- Profile Header Section -->
-            <!-- Changed padding to be applied consistently across the header/content sections -->
-            <header class="p-6 md:p-10 border-b border-slate-200 dark:border-slate-600 flex flex-col md:flex-row items-center">
+            <!-- Banner Image --><img src="./banner.png" alt="Profile Banner" class="w-full h-40 object-cover rounded-t-lg">
+
+            <!-- Profile Header Section (Updated Professional Title) --><header class="p-6 md:p-10 border-b border-slate-200 dark:border-slate-600 flex flex-col md:flex-row items-center relative -mt-16 md:-mt-20 z-10">
                 <img src="./pfp.png" 
                      alt="Profile Picture" 
-                     class="w-32 h-32 rounded-full border-4 border-primary shadow-lg mb-4 md:mb-0 md:mr-6 object-cover">
+                     class="w-32 h-32 rounded-full border-4 border-primary shadow-lg mb-4 md:mb-0 md:mr-6 object-cover bg-white dark:bg-slate-800">
                 
                 <div>
                     <h1 class="text-4xl font-extrabold text-slate-800 dark:text-white">Mian Asad Hafeez</h1>
-                    <p class="text-xl text-primary font-medium mt-1">Digital Agriculture Specialist & Agronomist</p>
-                    <p class="text-slate-600 dark:text-slate-300 mt-2">Leveraging technology and data science to drive efficiency and sustainability in modern farming.</p>
+                    <p class="text-xl text-primary font-medium mt-1">Digital Agriculture Specialist & Reporter (Dunya News)</p>
+                    <p class="text-slate-600 dark:text-slate-300 mt-2">Combining deep agricultural expertise with a passion for objective reporting on policy, technology, and rural development.</p>
                 </div>
             </header>
 
-            <!-- Tab Navigation -->
-            <nav class="flex border-b border-slate-200 dark:border-slate-600">
-                <!-- Tab buttons need dynamic text colors and hover states for both modes -->
-                <button data-tab="about" class="tab-button py-3 px-6 text-sm md:text-base font-semibold transition-all ease-in-out duration-300 active-tab text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary">
+            <!-- Tab Navigation --><nav class="flex border-b border-slate-200 dark:border-slate-600">
+                <!-- Tab buttons: Initial active state applied directly to prevent flicker --><button data-tab="about" class="tab-button py-3 px-6 text-sm md:text-base font-semibold transition-all ease-in-out duration-300 active-tab border-primary border-b-2 text-primary">
                     About Me
                 </button>
-                <button data-tab="portfolio" class="tab-button py-3 px-6 text-sm md:text-base font-semibold transition-all ease-in-out duration-300 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary">
-                    Fieldwork & Projects
+                <button data-tab="portfolio" class="tab-button py-3 px-6 text-sm md:text-base font-semibold transition-all ease-in-out duration-300 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary border-transparent">
+                    Reporting & Tech
                 </button>
-                <button data-tab="contact" class="tab-button py-3 px-6 text-sm md:text-base font-semibold transition-all ease-in-out duration-300 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary">
+                <button data-tab="contact" class="tab-button py-3 px-6 text-sm md:text-base font-semibold transition-all ease-in-out duration-300 text-slate-800 dark:text-slate-400 hover:text-primary dark:hover:text-primary border-transparent">
                     Contact & Links
                 </button>
             </nav>
 
-            <!-- Tab Content Area -->
-            <main class="p-6 md:p-10">
-                
-                <!-- About Me Tab Content -->
-                <section id="about-content" class="tab-content">
-                    <h2 class="text-3xl font-bold mb-4 text-primary">My Focus: Precision & Sustainability</h2>
-                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                        My expertise lies at the intersection of **agronomy** and **data science**. I focus on implementing precision agriculture techniques, including remote sensing, IoT device integration, and advanced analytics to optimize resource use—specifically water, fertilizer, and pesticides. My goal is to maximize yield quality and minimize environmental impact through informed, data-driven decisions across various crop cycles.
-                    </p>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mt-6">
-                        <!-- Stat Boxes (Updated for Agriculture) -->
-                        <div class="p-3 bg-slate-100 dark:bg-slate-600 rounded-lg"><span class="font-bold text-lg">2,500+</span> Acres Managed</div>
-                        <div class="p-3 bg-slate-100 dark:bg-slate-600 rounded-lg"><span class="font-bold text-lg">6</span> Major Crops</div>
-                        <div class="p-3 bg-slate-100 dark:bg-slate-600 rounded-lg"><span class="font-bold text-lg">40%</span> Water Reduction</div>
-                        <div class="p-3 bg-slate-100 dark:bg-slate-600 rounded-lg"><span class="font-bold text-lg">Soil</span> Health Focus</div>
-                    </div>
-                </section>
-
-                <!-- Portfolio Tab Content (Updated for Agriculture) -->
-                <section id="portfolio-content" class="tab-content hidden">
-                    <h2 class="text-3xl font-bold mb-6 text-primary">Featured Fieldwork & Systems</h2>
+            <!-- Tab Content Area --><!-- Main content takes up available space --><main class="p-6 md:p-10 flex-grow">
+                <!-- Wrapper for animated, absolute content. Provides minimum height to prevent layout collapse. --><div class="relative min-h-[600px]"> 
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Project 1: Yield Prediction System -->
-                        <div class="p-5 bg-slate-100 dark:bg-slate-600 rounded-xl shadow-lg hover:shadow-primary/30 transition duration-300">
-                            <h3 class="text-xl font-semibold mb-2 text-slate-800 dark:text-white">AI-Driven Yield Prediction Dashboard</h3>
-                            <p class="text-slate-600 dark:text-slate-300 mb-3">Developed a machine learning model that processes satellite imagery and local weather data to forecast crop yield with 95% accuracy, enabling proactive harvest planning.</p>
-                            <span class="inline-block bg-primary/20 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">Python (TensorFlow)</span>
-                            <span class="inline-block bg-primary/20 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">Remote Sensing</span>
-                        </div>
-                        <!-- Project 2: Irrigation Optimization -->
-                        <div class="p-5 bg-slate-100 dark:bg-slate-600 rounded-xl shadow-lg hover:shadow-primary/30 transition duration-300">
-                            <h3 class="text-xl font-semibold mb-2 text-slate-800 dark:text-white">IoT-Based Smart Irrigation Network</h3>
-                            <p class="text-slate-600 dark:text-slate-300 mb-3">Designed and deployed a network of soil moisture sensors and micro-controllers to automate irrigation, saving significant water and energy resources across several farms.</p>
-                            <span class="inline-block bg-primary/20 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">IoT</span>
-                            <span class="inline-block bg-primary/20 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">Water Management</span>
-                        </div>
-                    </div>
-                </section>
+                    <!-- About Me Tab Content (Active by default, opacity-100) --><section id="about-content" class="tab-content absolute top-0 left-0 w-full transition-opacity duration-500 opacity-100">
+                        <h2 class="text-3xl font-bold mb-4 text-primary">My Focus: Precision & Sustainability</h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                            I operate in two interconnected professional worlds. By day, I leverage **agronomy** and **data science** to implement precision agriculture techniques, optimizing water, fertilizer, and pesticides for sustainable farming. My second role is as a **News Reporter for Dunya News**, where I cover critical policy issues, rural development, and the impact of technology on Pakistan's agricultural sector. This duality allows me to bring grounded, expert insight to national reporting.
+                        </p>
+                    </section>
 
-                <!-- Contact Tab Content (Icons updated to Font Awesome) -->
-                <section id="contact-content" class="tab-content hidden">
-                    <h2 class="text-3xl font-bold mb-6 text-primary">Get In Touch</h2>
-                    
-                    <div class="space-y-4">
-                        <!-- Email (Updated to Font Awesome Solid) -->
-                        <div class="flex items-center p-4 bg-slate-100 dark:bg-slate-600 rounded-xl shadow">
-                            <i class="fas fa-envelope w-6 h-6 mr-4 text-primary"></i>
-                            <div>
-                                <p class="text-sm font-light text-slate-500 dark:text-slate-300">Email Address</p>
-                                <a href="mailto:jane.doe@example.com" class="text-lg font-semibold text-slate-800 dark:text-white hover:text-primary transition duration-200">jane.doe@example.com</a>
-                            </div>
-                        </div>
+                    <!-- Portfolio Tab Content (Inactive by default, opacity-0, invisible, cannot be clicked) --><section id="portfolio-content" class="tab-content absolute top-0 left-0 w-full transition-opacity duration-500 invisible opacity-0 pointer-events-none">
+                        <h2 class="text-3xl font-bold mb-6 text-primary">Featured Reporting & Tech Systems</h2>
                         
-                        <!-- LinkedIn (Updated to Font Awesome Brand: fab) -->
-                        <div class="flex items-center p-4 bg-slate-100 dark:bg-slate-600 rounded-xl shadow">
-                            <i class="fab fa-linkedin w-6 h-6 mr-4 text-primary"></i>
-                            <div>
-                                <p class="text-sm font-light text-slate-500 dark:text-slate-300">LinkedIn Profile</p>
-                                <a href="#" class="text-lg font-semibold text-slate-800 dark:text-white hover:text-primary transition duration-200">/in/jane-p-doe-dev</a>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Project 1: Investigative Reporting Series (New Content) --><div class="p-5 bg-slate-100 dark:bg-slate-600 rounded-xl shadow-lg hover:shadow-primary/30 transition duration-300">
+                                <h3 class="text-xl font-semibold mb-2 text-slate-800 dark:text-white">Investigative Series: National Water Policy</h3>
+                                <p class="text-slate-600 dark:text-slate-300 mb-3">Led a team at **Dunya News** to investigate the regional impact of current water distribution policies on small-scale farmers, culminating in a 5-part report broadcast nationwide.</p>
+                                <span class="inline-block bg-primary/20 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">Dunya News</span>
+                                <span class="inline-block bg-primary/20 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">Journalism</span>
+                            </div>
+                            <!-- Project 2: Irrigation Optimization (Retained Content) --><div class="p-5 bg-slate-100 dark:bg-slate-600 rounded-xl shadow-lg hover:shadow-primary/30 transition duration-300">
+                                <h3 class="text-xl font-semibold mb-2 text-slate-800 dark:text-white">IoT-Based Smart Irrigation Network</h3>
+                                <p class="text-slate-600 dark:text-slate-300 mb-3">Designed and deployed a network of soil moisture sensors and micro-controllers to automate irrigation, saving significant water and energy resources across several farms.</p>
+                                <span class="inline-block bg-primary/20 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">IoT</span>
+                                <span class="inline-block bg-primary/20 text-primary text-xs font-medium px-2.5 py-0.5 rounded-full">Water Management</span>
                             </div>
                         </div>
-                        
-                        <!-- GitHub (Updated to Font Awesome Brand: fab) -->
-                        <div class="flex items-center p-4 bg-slate-100 dark:bg-slate-600 rounded-xl shadow">
-                            <i class="fab fa-github w-6 h-6 mr-4 text-primary"></i>
-                            <div>
-                                <p class="text-sm font-light text-slate-500 dark:text-slate-300">GitHub Repository</p>
-                                <a href="#" class="text-lg font-semibold text-slate-800 dark:text-white hover:text-primary transition duration-200">/jane-p-doe-code</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    </section>
 
+                    <!-- Contact Tab Content (Inactive by default, opacity-0, invisible, cannot be clicked) --><section id="contact-content" class="tab-content absolute top-0 left-0 w-full transition-opacity duration-500 invisible opacity-0 pointer-events-none">
+                        <h2 class="text-3xl font-bold mb-6 text-primary">Get In Touch</h2>
+                        
+                        <div class="space-y-4">
+                            <!-- Email --><div class="flex items-center p-4 bg-slate-100 dark:bg-slate-600 rounded-xl shadow">
+                                <i class="fas fa-envelope w-6 h-6 mr-4 text-primary"></i>
+                                <div>
+                                    <p class="text-sm font-light text-slate-500 dark:text-slate-300">Email Address</p>
+                                    <a href="mailto:asadlsc@gmail.com" class="text-lg font-semibold text-slate-800 dark:text-white hover:text-primary transition duration-200">asadlsc@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <!-- WhatsApp (Updated with user's number) --><div class="flex items-center p-4 bg-slate-100 dark:bg-slate-600 rounded-xl shadow">
+                                <i class="fab fa-whatsapp w-6 h-6 mr-4 text-primary"></i>
+                                <div>
+                                    <p class="text-sm font-light text-slate-500 dark:text-slate-300">WhatsApp</p>
+                                    <a href="https://wa.me/923006565741" target="_blank" class="text-lg font-semibold text-slate-800 dark:text-white hover:text-primary transition duration-200">**+92 300 6565741**</a>
+                                </div>
+                            </div>
+                            
+                            <!-- GitHub --><div class="flex items-center p-4 bg-slate-100 dark:bg-slate-600 rounded-xl shadow">
+                                <i class="fab fa-github w-6 h-6 mr-4 text-primary"></i>
+                                <div>
+                                    <p class="text-sm font-light text-slate-500 dark:text-slate-300">GitHub Profile</p>
+                                    <a href="https://github.com/asadlsc" target="_blank" class="text-lg font-semibold text-slate-800 dark:text-white hover:text-primary transition duration-200">github.com/asadlsc</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </main>
 
         </div>
@@ -173,35 +152,68 @@
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applySystemTheme);
 
 
-            // --- Tab Switching Logic (Updated for Theme) ---
+            // --- Tab Switching Logic (Now with Animation) ---
+
+            /**
+             * Helper to manage visibility and opacity for animated transition.
+             * The transition is controlled by the CSS class duration-500.
+             */
+            function animateTab(element, shouldShow) {
+                if (shouldShow) {
+                    // 1. Prepare to show: remove display-blocking classes immediately
+                    element.classList.remove('invisible', 'pointer-events-none');
+                    
+                    // 2. Start Opacity Transition (needs a slight timeout to register the visibility change)
+                    setTimeout(() => {
+                        element.classList.remove('opacity-0');
+                        element.classList.add('opacity-100');
+                    }, 10);
+                } else {
+                    // 1. Prepare to hide: start opacity transition immediately
+                    element.classList.remove('opacity-100');
+                    element.classList.add('opacity-0');
+                    
+                    // 2. Wait for transition to finish (500ms, matching CSS duration) then block display/events
+                    setTimeout(() => {
+                        element.classList.add('invisible', 'pointer-events-none');
+                    }, 500); 
+                }
+            }
 
             /**
              * Handles the switching logic for the tab interface.
-             * @param {string} targetTabId - The data-tab value of the clicked button (e.g., 'about', 'portfolio').
              */
             function switchTab(targetTabId) {
-                // 1. Hide all content sections
+                let currentlyActiveContent = null;
+                
+                // 1. Identify currently active tab content and start the fade-out animation
                 tabContents.forEach(content => {
-                    content.classList.add('hidden');
+                    // Check if content is currently visible
+                    if (content.classList.contains('opacity-100')) {
+                        currentlyActiveContent = content;
+                    }
                 });
 
-                // 2. Reset styles for all buttons (Inactive state)
-                tabButtons.forEach(button => {
-                    button.classList.remove('active-tab', 'border-primary', 'border-b-2', 'text-white', 'dark:text-white');
-                    // Set inactive text colors for light/dark mode
-                    button.classList.add('text-slate-800', 'dark:text-slate-400', 'border-transparent');
-                });
-
-                // 3. Show the target content section
+                if (currentlyActiveContent) {
+                    animateTab(currentlyActiveContent, false);
+                }
+                
+                // 2. Show the target content section with the fade-in animation
                 const targetContent = document.getElementById(targetTabId + '-content');
                 if (targetContent) {
-                    targetContent.classList.remove('hidden');
+                    animateTab(targetContent, true);
                 }
+
+                // 3. Reset styles for all buttons (Inactive state)
+                tabButtons.forEach(button => {
+                    button.classList.remove('active-tab', 'border-primary', 'border-b-2', 'text-primary');
+                    button.classList.add('text-slate-800', 'dark:text-slate-400', 'border-transparent');
+                });
 
                 // 4. Set the active button style
                 const activeButton = document.querySelector(`.tab-button[data-tab="${targetTabId}"]`);
                 if (activeButton) {
-                    activeButton.classList.add('active-tab', 'border-primary', 'border-b-2', 'text-primary'); // primary color for active text
+                    activeButton.classList.add('active-tab', 'border-primary', 'border-b-2', 'text-primary'); 
                     activeButton.classList.remove('text-slate-800', 'dark:text-slate-400', 'border-transparent');
                 }
             }
@@ -214,9 +226,11 @@
                 });
             });
 
-            // Set default tab on load and apply initial active styling
-            switchTab('about'); 
+            // Note: Removed the initial switchTab('about'); call here to prevent the flicker on load.
+            // The initial active state is now set directly in the HTML markup.
         });
     </script>
 </body>
 </html>
+
+    
